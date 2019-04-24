@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>white</title>
+  
+  <subtitle>若不是你突然闯进我生活</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-04-24T13:34:13.131Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>小白</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>socket套接字</title>
+    <link href="http://yoursite.com/2019/04/24/socket%E5%A5%97%E6%8E%A5%E5%AD%97/"/>
+    <id>http://yoursite.com/2019/04/24/socket套接字/</id>
+    <published>2019-04-24T12:16:31.000Z</published>
+    <updated>2019-04-24T13:34:13.131Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>socket (套接字)</strong></p><p>socket是对传输层协议的封装</p><p>socket本身不是协议而是一个调用接口(API)</p><p>socket类型：</p><p>基于tcp协议的流式socket</p><p>基于udp协议的报式socket</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;socket (套接字)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;socket是对传输层协议的封装&lt;/p&gt;
+&lt;p&gt;socket本身不是协议而是一个调用接口(API)&lt;/p&gt;
+&lt;p&gt;socket类型：&lt;/p&gt;
+&lt;p&gt;基于tcp协议的流式socket&lt;/p&gt;
+&lt;p&gt;基于
+      
+    
+    </summary>
+    
+      <category term="python工具开发" scheme="http://yoursite.com/categories/python%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>php简介</title>
+    <link href="http://yoursite.com/2019/04/24/php%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2019/04/24/php简介/</id>
+    <published>2019-04-24T10:47:49.000Z</published>
+    <updated>2019-04-24T13:33:43.383Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>PHP 文件是什么？</strong></p><ul><li>PHP（全称：PHP：Hypertext Preprocessor，即”PHP：超文本预处理器”）是一种通用开源脚本语言。</li><li>PHP 脚本在服务器上执行。</li><li>PHP 可免费下载使用。</li></ul><p><strong>PHP 文件是什么？</strong></p><ul><li>PHP 文件可包含文本、HTML、JavaScript代码和 PHP 代码</li><li>PHP 代码在服务器上执行，结果以纯 HTML 形式返回给浏览器</li><li>PHP 文件的默认文件扩展名是 “.php”</li></ul><p><strong>PHP 能做什么？</strong></p><ul><li>PHP 可以生成动态页面内容</li><li>PHP 可以创建、打开、读取、写入、关闭服务器上的文件</li><li>PHP 可以收集表单数据</li><li>PHP 可以发送和接收 cookies</li><li>PHP 可以添加、删除、修改您的数据库中的数据</li><li>PHP 可以限制用户访问您的网站上的一些页面</li><li>PHP 可以加密数据</li></ul><p>通过 PHP，您不再限于输出 HTML。您可以输出图像、PDF 文件，甚至 Flash 电影。您还可以输出任意的文本，比如 XHTML 和 XML。</p><p><strong>为什么使用 PHP？</strong></p><ul><li>PHP 可在不同的平台上运行（Windows、Linux、Unix、Mac OS X 等）</li><li>PHP 与目前几乎所有的正在被使用的服务器相兼容（Apache、IIS 等）</li><li>PHP 提供了广泛的数据库支持</li><li>PHP 是免费的，可从官方的 PHP 资源下载它：<a href="http://www.php.net/" target="_blank" rel="noopener"> www.php.net</a></li><li>PHP 易于学习，并可高效地运行在服务器端</li></ul><p>原文链接:<a href="http://www.runoob.com/php/php-intro.html" target="_blank" rel="noopener">http://www.runoob.com/php/php-intro.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;PHP 文件是什么？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PHP（全称：PHP：Hypertext Preprocessor，即”PHP：超文本预处理器”）是一种通用开源脚本语言。&lt;/li&gt;
+&lt;li&gt;PHP 脚本在服务器上执行。&lt;/li&gt;
+&lt;li&gt;P
+      
+    
+    </summary>
+    
+      <category term="php" scheme="http://yoursite.com/categories/php/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>渗透测试一般过程</title>
+    <link href="http://yoursite.com/2019/04/24/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B8%80%E8%88%AC%E8%BF%87%E7%A8%8B/"/>
+    <id>http://yoursite.com/2019/04/24/渗透测试一般过程/</id>
+    <published>2019-04-24T09:01:49.000Z</published>
+    <updated>2019-04-24T13:46:58.400Z</updated>
+    
+    <content type="html"><![CDATA[<p>主域名-子域名-C段-端口扫描<br>端口扫描-nmap<br>http扫描-http指纹识别（web应用漏洞）<br>系统漏洞： ftp，mysql弱口令，3389，rsync漏洞，<br>web应用组件漏洞: tomact弱口令，weblogic序列化，jboss序列化，<br>web漏洞：注入，弱口令，越权.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;主域名-子域名-C段-端口扫描&lt;br&gt;端口扫描-nmap&lt;br&gt;http扫描-http指纹识别（web应用漏洞）&lt;br&gt;系统漏洞： ftp，mysql弱口令，3389，rsync漏洞，&lt;br&gt;web应用组件漏洞: tomact弱口令，weblogic序列化，jboss序列化
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="web安全" scheme="http://yoursite.com/tags/web%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人生</title>
+    <link href="http://yoursite.com/2019/04/24/%E4%BA%BA%E7%94%9F/"/>
+    <id>http://yoursite.com/2019/04/24/人生/</id>
+    <published>2019-04-24T09:01:49.000Z</published>
+    <updated>2019-04-24T13:47:18.825Z</updated>
+    
+    <content type="html"><![CDATA[<p>35岁 你因为身体越来越差<br>加班越来越少<br>晋升的速度也越来越缓慢<br>那天下班，媳妇告诉你<br>孩子要上幼儿园了<br>双语的一个月3000<br>你皱了皱眉头，那边就已经不耐烦了<br>“四单元的老王家孩子，一个月6000”<br>“你已经这样了，你想让孩子也输？”<br>你没说话，回屋给媳妇转了6000块钱<br>这笔钱，你原本打算给自己过个生日，买个新电脑<br>38岁，孩子上了一年级<br>老师说一年级最关键，打好基础很重要<br>你笑着说，是是是，老师您多照顾<br>新生接待的老师看着你不明事理的脸<br>给你指了一条明路<br>“课外辅导班，一个月2200”<br>40岁的时候，孩子上了三年级<br>老师说，三年级，最关键，承上启下很重要<br>你笑着说：是是是，正打算再报个补习班<br>44岁，孩子上了初中<br>有一天回到家，她对你说<br>爸爸，我想学钢琴<br>你没什么犹豫的<br>你以为这些年，你已经习惯了<br>但那句“爸爸现在买不起”你始终说不出口<br>好在孩子比较懂事<br>她说：爸爸没事，要不我先学陶笛也可以<br>你看着这么懂事的孩子，却开心不起来<br>46岁，孩子上了一个不好不差的高中<br>有一天你在开会，接到了老师的电话<br>电话里说你的孩子在学校打架了<br>叫你去一趟<br>你唯唯诺诺的<br>和那个比你还小5岁的领导请了个假<br>到学校又被老师训了一通<br>无非台词就是那一句<br>你们做家长的就知道工作，能不能陪陪孩子<br>你看着这个老师，有点可笑<br>好像当时说：<br>家长在外辛苦点<br>多赚点钱让孩子多补补课的和他不是一个人<br>50岁，孩子上了大学<br>很争气，是一个一本<br>他学的专业你有点看不懂<br>你只知道工作不一定好找<br>而且学费还死贵<br>你和他深夜想聊聊<br>准备了半斤白酒，一碟花生米<br>你说着那些曾经你最讨厌的话<br>还是要为以后工作着想<br>挑个热门的专业<br>活着比热爱重要<br>你们从交流变成了争吵<br>你发现，你老了<br>老到可能都打不过这个18岁的孩子<br>你说不过他，只能说一句：我是你爸爸！<br>孩子看着你，知道再怎么争辩都没用<br>这场确立你最后威严的酒局不欢而散<br>你听的不真切<br>在孩子回自己屋的路上好像叨叨了一句<br>“我不想活的像你一样”<br>怎么就哭了呢？50岁的人了<br>一定是酒太辣了，对不对<br>一定是酒太辣了<br>55岁，孩子工作了，似乎有一点理解你了<br>但你却反了过来，你说不要妥协<br>56岁，孩子也结婚了<br>你问他喜欢那个姑娘么<br>他愣了愣说：喜欢吧<br>60岁，辛苦了一辈子，想出去走走<br>身边的那个人过了30年<br>你依旧分不清到底喜不喜欢<br>你们开始规划旅游路线<br>这么多年了<br>你们还是存在分歧，还是在争吵<br>某个瞬间，你觉得<br>这样可能也挺好<br>一切都准备好了<br>儿子说：爸妈，我工作太忙了<br>可以帮我照顾一下孩子么<br>你们退了机票，又回到了30年前<br>70岁，孩子的孩子也长大了，<br>不用天天操心了<br>你下定决心说：一定要去玩一趟<br>可是手边的拐杖<br>只能支持你走到楼下的花园<br>75岁，你在医院的病床上<br>身边聚满了人，<br>你迷迷糊糊的看见医生摇了摇头<br>周围那些人神情肃穆<br>你明白了，你要死掉了<br>你没有感到一丝害怕<br>你突然问自己，<br>我到底是什么时候死掉的呢？<br>你想起来30岁的那场婚礼<br>原来，那时候，你就死掉了吧<br>依照惯例 死前的3秒，<br>你的大脑要走马灯 倒叙你这75个年头的一生 画面一张一张的过<br>1秒 2秒 两秒过去了 你面无表情的看着这两秒内的回忆<br>第3秒 突然你笑了<br>原来已经回到了15岁的那一年 你看见一个男孩 他叼着一袋牛奶，<br>背着书包 从另一个女孩家的阳台下跑过 那个男孩朝窗户里看了看<br>那是15岁的你暗恋的那个女孩子<br>你想不起来她长什么样子了<br>最后一秒你努力的回忆着<br>然后终于笑了出来<br>3秒过去了 身边的人突然间开始嚎啕大哭 你可能听不清了<br>你最后听到的嘈杂的声音<br>是一群十五六的少年<br>起着哄说的 答应他 答应他 答应他!</p><p><img src="\img\人生.jpg" alt="人生"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;35岁 你因为身体越来越差&lt;br&gt;加班越来越少&lt;br&gt;晋升的速度也越来越缓慢&lt;br&gt;那天下班，媳妇告诉你&lt;br&gt;孩子要上幼儿园了&lt;br&gt;双语的一个月3000&lt;br&gt;你皱了皱眉头，那边就已经不耐烦了&lt;br&gt;“四单元的老王家孩子，一个月6000”&lt;br&gt;“你已经这样了，你想让孩
+      
+    
+    </summary>
+    
+      <category term="故事短句" scheme="http://yoursite.com/categories/%E6%95%85%E4%BA%8B%E7%9F%AD%E5%8F%A5/"/>
+    
+    
+      <category term="丧" scheme="http://yoursite.com/tags/%E4%B8%A7/"/>
+    
+  </entry>
+  
+</feed>
