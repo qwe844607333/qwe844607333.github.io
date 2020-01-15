@@ -306,7 +306,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="Apache-Solr-Velocity模版注入远程命令执行漏洞复现以及POC编写"><a href="#Apache-Solr-Velocity模版注入远程命令执行漏洞复现以及POC编写" class="headerlink" title="Apache Solr Velocity模版注入远程命令执行漏洞复现以及POC编写"></a>Apache Solr Velocity模版注入远程命令执行漏洞复现以及POC编写</h2><h4 id="0x01-漏洞概述"><a href="#0x01-漏洞概述" class="headerlink" title="0x01 漏洞概述"></a>0x01 漏洞概述</h4><p>19年10月31日，安全研究员S00pY在GitHub发布了ApacheSolr Velocity模版注入远程命令执行的POC，经过其他安全团队和人员的验证和复现，此漏洞已经能够被批量利用。</p>
+              <h2 id="Apache-Solr-Velocity模版注入远程命令执行漏洞复现以及POC编写"><a href="#Apache-Solr-Velocity模版注入远程命令执行漏洞复现以及POC编写" class="headerlink" title="Apache Solr Velocity模版注入远程命令执行漏洞复现以及POC编写"></a>Apache Solr Velocity模版注入远程命令执行漏洞复现以及POC编写</h2><p>作者：Whitesun</p>
+<h4 id="0x01-漏洞概述"><a href="#0x01-漏洞概述" class="headerlink" title="0x01 漏洞概述"></a>0x01 漏洞概述</h4><p>19年10月31日，安全研究员S00pY在GitHub发布了ApacheSolr Velocity模版注入远程命令执行的POC，经过其他安全团队和人员的验证和复现，此漏洞已经能够被批量利用。</p>
 <p><img src="\img\1578276051044.png" alt></p>
 <p><a href="https://gist.githubusercontent.com/s00py/a1ba36a3689fa13759ff910e179fc133/raw/fae5e663ffac0e3996fd9dbb89438310719d347a/" target="_blank" rel="noopener">https://gist.githubusercontent.com/s00py/a1ba36a3689fa13759ff910e179fc133/raw/fae5e663ffac0e3996fd9dbb89438310719d347a/</a></p>
 <p>该漏洞的产生原因：Apache Solr默认集成VelocityResponseWriter插件，在该插件的初始化参数中，params.resource.loader.enabled这个选项是用来控制是否允许参数资源加载器在Solr请求参数中指定模版，默认设置是false。</p>
