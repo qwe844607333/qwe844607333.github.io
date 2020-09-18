@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl">
+  
+  
+  
+  
+  <title>搭建 web 运行的基础环境 | Whitesun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="搭建 web 运行的基础环境Whitesun 0x01 Nginx安装我采用的是虚拟机的Redhat7，因为之前在进学校学习Linux的时候老师要求安装的。我一直用到毕业设计，还是很有感情的！！！ 1.首先安装四个依赖 1yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel  2.解压Nginx安装包 tar xzv">
+<meta name="keywords" content="信安之路">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建 web 运行的基础环境">
+<meta property="og:url" content="http://yoursite.com/2020/09/18/搭建-web-运行的基础环境/index.html">
+<meta property="og:site_name" content="Whitesun">
+<meta property="og:description" content="搭建 web 运行的基础环境Whitesun 0x01 Nginx安装我采用的是虚拟机的Redhat7，因为之前在进学校学习Linux的时候老师要求安装的。我一直用到毕业设计，还是很有感情的！！！ 1.首先安装四个依赖 1yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel  2.解压Nginx安装包 tar xzv">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx1.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx2.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx3.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx4.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx5.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx6.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx7.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/php6.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/php7.png">
+<meta property="og:image" content="G:.\Nginx\php8.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/php9.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/php10.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/php11.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/php12.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/php14.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/php13.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/php15.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/php5.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/php17.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql1.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql2.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql3.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql5.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql6.png">
+<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql7.png">
+<meta property="og:updated_time" content="2020-09-18T03:47:50.317Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搭建 web 运行的基础环境">
+<meta name="twitter:description" content="搭建 web 运行的基础环境Whitesun 0x01 Nginx安装我采用的是虚拟机的Redhat7，因为之前在进学校学习Linux的时候老师要求安装的。我一直用到毕业设计，还是很有感情的！！！ 1.首先安装四个依赖 1yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel  2.解压Nginx安装包 tar xzv">
+<meta name="twitter:image" content="http://yoursite.com/img/Nginx/Nginx1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Whitesun" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/spider1.jpg">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/niceboy1.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">小白</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">有梦想的小菜鸡</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/categories/渗透测试/">渗透测试</a></li>
+                        
+                            <li><a href="/categories/php">PHP</a></li>
+                        
+                            <li><a href="/categories/python工具开发">Python工具开发</a></li>
+                        
+                            <li><a href="/categories/故事短句">故事短句</a></li>
+                        
+                            <li><a href="/categories/LOVER">MY LOVER</a></li>
+                        
+                            <li><a href="/categories/信安之路学习">信安之路学习</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/qwe844607333/qwe844607333.github.io" title="github">github</a>
+                            
+                                <a class="fl weibo" target="_blank" href="https://weibo.com/" title="weibo">weibo</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Solr/" style="font-size: 10px;">Solr</a> <a href="/tags/metasploit/" style="font-size: 10px;">metasploit</a> <a href="/tags/sad/" style="font-size: 10px;">sad~</a> <a href="/tags/weblogic-RCE/" style="font-size: 10px;">weblogic RCE</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/丧/" style="font-size: 10px;">丧</a> <a href="/tags/信安之路/" style="font-size: 10px;">信安之路</a> <a href="/tags/小童/" style="font-size: 10px;">小童</a> <a href="/tags/日常/" style="font-size: 20px;">日常</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://jiubaeryi9821.github.io/">9821</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">我从来不想独身~</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">小白</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/niceboy1.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">小白</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">有梦想的小菜鸡</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/渗透测试/">渗透测试</a></li>
+                
+                    <li><a href="/categories/php">PHP</a></li>
+                
+                    <li><a href="/categories/python工具开发">Python工具开发</a></li>
+                
+                    <li><a href="/categories/故事短句">故事短句</a></li>
+                
+                    <li><a href="/categories/LOVER">MY LOVER</a></li>
+                
+                    <li><a href="/categories/信安之路学习">信安之路学习</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/qwe844607333/qwe844607333.github.io" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-搭建-web-运行的基础环境" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/18/搭建-web-运行的基础环境/" class="article-date">
+      <time datetime="2020-09-18T03:32:46.000Z" itemprop="datePublished">2020-09-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      搭建 web 运行的基础环境
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/信安之路学习/">信安之路学习</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/信安之路/">信安之路</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="搭建-web-运行的基础环境"><a href="#搭建-web-运行的基础环境" class="headerlink" title="搭建 web 运行的基础环境"></a>搭建 web 运行的基础环境</h1><p>Whitesun</p>
+<h4 id="0x01-Nginx安装"><a href="#0x01-Nginx安装" class="headerlink" title="0x01 Nginx安装"></a>0x01 Nginx安装</h4><p>我采用的是虚拟机的Redhat7，因为之前在进学校学习Linux的时候老师要求安装的。我一直用到毕业设计，还是很有感情的！！！</p>
+<p>1.首先安装四个依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel</span><br></pre></td></tr></table></figure>
+<p><img src="\img\Nginx\Nginx1.png" alt="Nginx1"></p>
+<p>2.解压Nginx安装包</p>
+<p>tar xzvf nginx-1.16.1.tar.gz</p>
+<p>3.进入安装目录，进行编译安装</p>
+<p>执行./configure</p>
+<p><img src="\img\Nginx\Nginx2.png" alt="Nginx2"></p>
+<p>4.执行 make 编译</p>
+<p><img src="\img\Nginx\Nginx3.png" alt="Nginx3"></p>
+<p>执行 make install</p>
+<p><img src="\img\Nginx\Nginx4.png" alt="Nginx4"></p>
+<p>5.验证否安装成功，一般在目录/usr/local下，会有Nginx文件夹。</p>
+<p><img src="\img\Nginx\Nginx5.png" alt="Nginx5"></p>
+<p>6.启动Nginx</p>
+<p>/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf</p>
+<p>7.查看进程是否存在</p>
+<p>ps -ef | grep nginx</p>
+<p><img src="\img\Nginx\Nginx6.png" alt="Nginx6"></p>
+<p>8.浏览器访问127.0.0.1查看Nginx默认页面</p>
+<p><img src="\img\Nginx\Nginx7.png" alt="Nginx7"></p>
+<h4 id="0x02-php-fpm安装"><a href="#0x02-php-fpm安装" class="headerlink" title="0x02 php-fpm安装"></a>0x02 php-fpm安装</h4><p>1.安装php7.4.5</p>
+<p>wget –no-check-certificate  <a href="https://www.php.net/distributions/php-7.4.5.tar.gz" target="_blank" rel="noopener">https://www.php.net/distributions/php-7.4.5.tar.gz</a></p>
+<p><img src="\img\Nginx\php6.png" alt="php6"></p>
+<p>2.解压，进入文件夹</p>
+<p><img src="\img\Nginx\php7.png" alt="php7"></p>
+<p>3.检查环境是否满足条件，如果没问题就会说Thank you，然后就能进行编译安装了。如果提示缺少包，按照包的名字安装即可！</p>
+<p><img src="G:.\Nginx\php8.png" alt="php8"></p>
+<p><code>.`</code>/configure<code></code>–prefix=<code>/usr/local/php` `--with-config-</code>file<code>-path=</code>/usr/local/php<code></code>–<code>enable</code>-mbstring –<code>enable</code>-<code>ftp` `--with-gd --with-jpeg-</code>dir<code>=</code>/usr<code></code>–with-png-<code>dir</code>=<code>/usr` `--with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --without-pear  --disable-phar --</code>enable<code>-sockets --with-freetype-</code>dir<code>=</code>/usr<code></code>–with-zlib –with-libxml-<code>dir</code>=<code>/usr` `--with-xmlrpc --</code>enable<code>-zip --</code>enable<code>-fpm --</code>enable<code>-xml --</code>enable<code>-sockets --with-gd --with-zlib --with-iconv --</code>enable<code>-zip --with-freetype-</code>dir<code>=</code>/usr/lib/<code></code>–<code>enable</code>-soap –<code>enable</code>-pcntl –<code>enable</code>-cli –with-curl`</p>
+<p> 4.编译安装，可能要等十多分钟</p>
+<p> make &amp;&amp; make install</p>
+<p><img src="\img\Nginx\php9.png" alt="php9"></p>
+<p>5.在之前编译的源码包中，找到 php.ini-production，复制到/usr/local/php下，并改名为php.ini</p>
+<p>cp php.ini-production /usr/local/php/php.ini</p>
+<p><img src="\img\Nginx\php10.png" alt="php10"></p>
+<p>6.设置让PHP错误信息打印在页面上，查找display-errors即可，将红圈处修改为on </p>
+<p>vi /usr/local/php/php.ini</p>
+<p><img src="\img\Nginx\php11.png" alt="php11"></p>
+<p>7.复制启动脚本</p>
+<p>cp ./sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm</p>
+<p>chmod +x /etc/init.d/php-fpm</p>
+<p><img src="\img\Nginx\php12.png" alt="php12"></p>
+<p>8.修改php-fpm配置文件：</p>
+<p>cd /usr/local/php/etc</p>
+<p>cp php-fpm.conf.default  php-fpm.conf</p>
+<p><img src="\img\Nginx\php14.png" alt="php14"></p>
+<p>vi php-fpm.conf<br>去掉 pid = run/php-fpm.pid 前面的分号</p>
+<p><img src="\img\Nginx\php13.png" alt="php13"></p>
+<p>cd php-fpm.d</p>
+<p>cp <a href="http://www.conf.default" target="_blank" rel="noopener">www.conf.default</a> <a href="http://www.conf" target="_blank" rel="noopener">www.conf</a></p>
+<p><img src="\img\Nginx\php15.png" alt="php15"></p>
+<p>然后重启php-fpm和Nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service php-fpm start</span><br><span class="line"></span><br><span class="line">/usr/local/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure>
+<p><img src="\img\Nginx\php5.png" alt="php5"></p>
+<p>9.在/usr/local/nginx/html/ 目录下添加一个phpinfo查看是否成功，可以看到php7.4.5已经安装成功了</p>
+<p><img src="\img\Nginx\php17.png" alt="php17"></p>
+<h4 id="0x03-Mysql安装"><a href="#0x03-Mysql安装" class="headerlink" title="0x03 Mysql安装"></a>0x03 Mysql安装</h4><p>这里选择5.7.29，8.0的版本还没研究过，等以后了解了再下</p>
+<p>直接去官网下载然后丢到虚拟机里面！</p>
+<p><img src="\img\Nginx\mysql1.png" alt="mysql1"></p>
+<p>1.创建MySQL安装目录</p>
+<p>mkdir -p /usr/local/mysql</p>
+<p>2.复制下载的MySQL文件到安装目录下</p>
+<p>cp mysql-5.7.29-1.el7.x86_64.rpm-bundle.tar /usr/local/mysql/</p>
+<p>3.解压文件</p>
+<p>cd /usr/local/mysql/<br>tar -xf mysql-5.7.29-1.el7.x86_64.rpm-bundle.tar</p>
+<p><img src="\img\Nginx\mysql2.png" alt="mysql2"></p>
+<p>4.按顺序执行如下安装</p>
+<p>rpm -ivh mysql-community-common-5.7.29-1.el7.x86_64.rpm –nodeps –force</p>
+<p>rpm -ivh mysql-community-libs-5.7.29-1.el7.x86_64.rpm  –nodeps –force</p>
+<p>rpm -ivh mysql-community-client-5.7.29-1.el7.x86_64.rpm  –nodeps –force</p>
+<p>rpm -ivh mysql-community-server-5.7.29-1.el7.x86_64.rpm   –nodeps –force</p>
+<p>rpm -ivh mysql-community-devel-5.7.29-1.el7.x86_64.rpm   –nodeps –force</p>
+<p>到此安装完成，安装完成后MySQL服务不会启动，接下来我们启动服务（安装过程中存在SElinux的问题，把它关掉就行不然会有报错）</p>
+<p>service mysqld status</p>
+<p><img src="\img\Nginx\mysql3.png" alt="mysql3"></p>
+<p>这里是running就是代表服务成功启动了！然后我们把密码修改了。到 vim /etc/my.conf，最后一行添加字段。</p>
+<p>skip-grant-tables</p>
+<p>然后重启mysql，直接登录。提示密码直接enter即可。然后照下图修改，马赛克处为你要改的密码</p>
+<p><img src="\img\Nginx\mysql5.png" alt="mysql5"></p>
+<p>然后quit;，之后吧my.cnf之前添加的字段删掉。再次重启服务就ok了</p>
+<p>至此linux+Nginx+php+mysql就部署完成了</p>
+<p>5.测试连接数据库查询数据，这是代码</p>
+<p><img src="\img\Nginx\mysql6.png" alt="mysql6"></p>
+<p>然后放到/usr/local/nginx/html/文件夹下面</p>
+<p>浏览器打开，成功连接查询数据</p>
+<p><img src="\img\Nginx\mysql7.png" alt="mysql7"></p>
+<h4 id="0x04-总结"><a href="#0x04-总结" class="headerlink" title="0x04 总结"></a>0x04 总结</h4><p>​    总的来说这个任务还是比较简单的，Nginx和php安装很顺利中间只要参考相关资料就能正常安装。主要问题出现最多的是mysql，期间多次出现启动不成功。查询很多资料也没解决，后来发现一片文章可能是SElinux的问题，关掉之后重装mysql就成功启动了。这个任务让我体会到自己去搭建环境还是很有必要的，因为用一键环境安装虽然方便，但是有时候有些知识学习不到。知其然不知其所以然，便是这个道理。所以大家在学习的时候还是要学习的稍微深一点，，知道其中道理才是最好的</p>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/u013045437/article/details/80163181" target="_blank" rel="noopener">https://blog.csdn.net/u013045437/article/details/80163181</a></p>
+<p><a href="https://blog.csdn.net/monica111111/article/details/80898947" target="_blank" rel="noopener">https://blog.csdn.net/monica111111/article/details/80898947</a></p>
+<p><a href="https://www.cnblogs.com/sum41/p/9362676.html" target="_blank" rel="noopener">https://www.cnblogs.com/sum41/p/9362676.html</a></p>
+<p><a href="https://blog.csdn.net/zwliang98/article/details/82997349" target="_blank" rel="noopener">https://blog.csdn.net/zwliang98/article/details/82997349</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2020/09/18/搭建-web-运行的基础环境/">搭建 web 运行的基础环境</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 小白 的个人博客">小白</a></p>
+        <p><span>发布时间:</span>2020年09月18日 - 11时32分</p>
+        <p><span>最后更新:</span>2020年09月18日 - 11时47分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/09/18/搭建-web-运行的基础环境/" title="搭建 web 运行的基础环境">http://yoursite.com/2020/09/18/搭建-web-运行的基础环境/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/09/18/搭建-web-运行的基础环境/　　作者: 小白" title></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/07/Solr-Velocity-rce/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Solr Velocity rce</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#搭建-web-运行的基础环境"><span class="toc-number">1.</span> <span class="toc-text">搭建 web 运行的基础环境</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#0x01-Nginx安装"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">0x01 Nginx安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x02-php-fpm安装"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">0x02 php-fpm安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x03-Mysql安装"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">0x03 Mysql安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x04-总结"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">0x04 总结</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2020/01/07/Solr-Velocity-rce/" title="下一篇: Solr Velocity rce">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/09/18/搭建-web-运行的基础环境/">搭建 web 运行的基础环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/07/Solr-Velocity-rce/">Solr Velocity rce</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/03/WebLogic-wls9-async反序列化远程命令执行漏洞复现/">WebLogic wls9-async反序列化远程命令执行漏洞复现</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/21/I-LIKE-YOU/">I LIKE YOU</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/五月六号杂句/">五月六号杂句</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/29/让你难过的事情就不要再坚持了/">让你难过的事情就不要再坚持了</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/29/metasploit常用命令/">metasploit常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/24/socket套接字/">socket套接字</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/24/php简介/">php简介</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/24/四月二十五杂句/">四月二十五杂句</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/24/人生/">人生</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/24/渗透测试一般过程/">渗透测试一般过程</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2020 小白
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/qwe844607333" target="_blank">Blog</a> by 小白
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+	<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 5;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
