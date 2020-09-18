@@ -13,40 +13,40 @@
 <meta name="keywords" content="信安之路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建 web 运行的基础环境">
-<meta property="og:url" content="http://yoursite.com/child/2020/09/18/搭建-web-运行的基础环境/index.html">
+<meta property="og:url" content="http://qwe844607333.github.io/2020/09/18/搭建-web-运行的基础环境/index.html">
 <meta property="og:site_name" content="Whitesun">
 <meta property="og:description" content="搭建 web 运行的基础环境Whitesun 0x01 Nginx安装我采用的是虚拟机的Redhat7，因为之前在进学校学习Linux的时候老师要求安装的。我一直用到毕业设计，还是很有感情的！！！ 1.首先安装四个依赖 1yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel  2.解压Nginx安装包 tar xzv">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx1.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx2.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx3.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx4.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx5.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx6.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/Nginx7.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/php6.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/php7.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/Nginx1.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/Nginx2.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/Nginx3.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/Nginx4.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/Nginx5.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/Nginx6.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/Nginx7.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/php6.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/php7.png">
 <meta property="og:image" content="G:.\Nginx\php8.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/php9.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/php10.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/php11.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/php12.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/php14.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/php13.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/php15.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/php5.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/php17.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql1.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql2.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql3.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql5.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql6.png">
-<meta property="og:image" content="http://yoursite.com/img/Nginx/mysql7.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/php9.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/php10.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/php11.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/php12.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/php14.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/php13.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/php15.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/php5.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/php17.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/mysql1.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/mysql2.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/mysql3.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/mysql5.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/mysql6.png">
+<meta property="og:image" content="http://qwe844607333.github.io/img/Nginx/mysql7.png">
 <meta property="og:updated_time" content="2020-09-18T03:47:50.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建 web 运行的基础环境">
 <meta name="twitter:description" content="搭建 web 运行的基础环境Whitesun 0x01 Nginx安装我采用的是虚拟机的Redhat7，因为之前在进学校学习Linux的时候老师要求安装的。我一直用到毕业设计，还是很有感情的！！！ 1.首先安装四个依赖 1yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel  2.解压Nginx安装包 tar xzv">
-<meta name="twitter:image" content="http://yoursite.com/img/Nginx/Nginx1.png">
+<meta name="twitter:image" content="http://qwe844607333.github.io/img/Nginx/Nginx1.png">
   
     <link rel="alternative" href="/atom.xml" title="Whitesun" type="application/atom+xml">
   
@@ -458,8 +458,8 @@
         <p><span>发布时间:</span>2020年09月18日 - 11时32分</p>
         <p><span>最后更新:</span>2020年09月18日 - 11时47分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/09/18/搭建-web-运行的基础环境/" title="搭建 web 运行的基础环境">http://yoursite.com/child/2020/09/18/搭建-web-运行的基础环境/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/child/2020/09/18/搭建-web-运行的基础环境/　　作者: 小白" title></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/09/18/搭建-web-运行的基础环境/" title="搭建 web 运行的基础环境">http://qwe844607333.github.io/2020/09/18/搭建-web-运行的基础环境/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://qwe844607333.github.io/2020/09/18/搭建-web-运行的基础环境/　　作者: 小白" title></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
